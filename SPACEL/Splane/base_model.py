@@ -167,7 +167,7 @@ class SplaneModel():
         self.cos_loss_obj = F.cosine_similarity
         self.d_loss_obj = F.cross_entropy
         self.n_clusters = n_clusters
-        self.Cluster = KMeans(n_clusters=self.n_clusters,n_init=10,tol=1e-3,algorithm='full',max_iter=1000,random_state=42)
+        self.Cluster = KMeans(n_clusters=self.n_clusters,n_init=10,tol=1e-3,algorithm='lloyd',max_iter=1000,random_state=42)
         self.optimizer_g = optim.RMSprop(self.model_g.parameters(),lr=lr)
         self.optimizer_d = optim.RMSprop(self.model_d.parameters(),lr=lr)
         self.l1 = l1
